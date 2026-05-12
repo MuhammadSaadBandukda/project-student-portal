@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Student Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .profile-container {
+            max-width: 600px;
+        }
+        .profile-info {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .info-label {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Portal</h2>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="result.html">📊 Result</a></li>
+                <li><a href="notice.html">🔔 Notices</a></li>
+            </ul>
+            <a href="#" id="logoutBtn" style="color: var(--accent-color); text-decoration: none; padding: 10px;">🚪 Logout</a>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Student Profile</h1>
+                <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+            </header>
+
+            <section class="card profile-container">
+                <h3>Personal Information</h3>
+                <div class="profile-info">
+                    <div class="info-label">Name:</div>
+                    <div>John Doe</div>
+                    
+                    <div class="info-label">Roll Number:</div>
+                    <div id="displayRoll">123456</div>
+                    
+                    <div class="info-label">Department:</div>
+                    <div>Computer Science</div>
+                    
+                    <div class="info-label">Semester:</div>
+                    <div>6th Semester</div>
+                    
+                    <div class="info-label">Email:</div>
+                    <div>john.doe@university.edu</div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+    <script>
+        // Update roll number from localStorage
+        const studentId = localStorage.getItem('studentId');
+        if (studentId) {
+            document.getElementById('displayRoll').textContent = studentId;
+        }
+    </script>
+</body>
+</html>

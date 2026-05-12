@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices - Student Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .notice-board {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .notice-card {
+            border-left: 5px solid var(--secondary-color);
+        }
+        .notice-date {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+        .notice-card h4 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Portal</h2>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="result.html">📊 Result</a></li>
+                <li><a href="notice.html">🔔 Notices</a></li>
+            </ul>
+            <a href="#" id="logoutBtn" style="color: var(--accent-color); text-decoration: none; padding: 10px;">🚪 Logout</a>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Notice Board</h1>
+                <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+            </header>
+
+            <section class="notice-board">
+                <div class="card notice-card">
+                    <div class="notice-date">May 10, 2026</div>
+                    <h4>End Semester Examination Schedule</h4>
+                    <p>The end semester examinations for the 6th semester will commence from June 15, 2026. Detailed schedule is available at the department office.</p>
+                </div>
+
+                <div class="card notice-card">
+                    <div class="notice-date">May 08, 2026</div>
+                    <h4>Project Submission Deadline</h4>
+                    <p>All students are required to submit their Web Engineering project by May 25, 2026. No extensions will be provided.</p>
+                </div>
+
+                <div class="card notice-card">
+                    <div class="notice-date">May 05, 2026</div>
+                    <h4>Workshop on Machine Learning</h4>
+                    <p>A three-day workshop on Machine Learning is being organized by the CS department from May 20-22. Registration is mandatory.</p>
+                </div>
+
+                <div class="card notice-card">
+                    <div class="notice-date">May 01, 2026</div>
+                    <h4>Holiday Announcement</h4>
+                    <p>The University will remain closed on May 15, 2026, on account of a local festival.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

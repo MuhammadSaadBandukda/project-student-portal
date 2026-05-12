@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance - Student Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .attendance-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .subject-item {
+            display: grid;
+            grid-template-columns: 200px 1fr 100px;
+            align-items: center;
+            gap: 20px;
+        }
+        .progress-bar-bg {
+            background-color: #ddd;
+            height: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background-color: var(--secondary-color);
+            transition: width 1s ease-in-out;
+        }
+        .percentage {
+            font-weight: bold;
+            text-align: right;
+        }
+        @media (max-width: 600px) {
+            .subject-item {
+                grid-template-columns: 1fr 100px;
+            }
+            .progress-bar-bg {
+                grid-column: span 2;
+                order: 3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Portal</h2>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="result.html">📊 Result</a></li>
+                <li><a href="notice.html">🔔 Notices</a></li>
+            </ul>
+            <a href="#" id="logoutBtn" style="color: var(--accent-color); text-decoration: none; padding: 10px;">🚪 Logout</a>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>My Attendance</h1>
+                <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+            </header>
+
+            <section class="card">
+                <h3>Semester Attendance Summary</h3>
+                <br>
+                <div class="attendance-list">
+                    <div class="subject-item">
+                        <span>Web Engineering</span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 85%;"></div>
+                        </div>
+                        <span class="percentage">85%</span>
+                    </div>
+                    <div class="subject-item">
+                        <span>Database Systems</span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 92%;"></div>
+                        </div>
+                        <span class="percentage">92%</span>
+                    </div>
+                    <div class="subject-item">
+                        <span>Software Testing</span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 78%;"></div>
+                        </div>
+                        <span class="percentage">78%</span>
+                    </div>
+                    <div class="subject-item">
+                        <span>Artificial Intelligence</span>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" style="width: 65%;"></div>
+                        </div>
+                        <span class="percentage">65%</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

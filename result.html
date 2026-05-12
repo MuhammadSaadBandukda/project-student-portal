@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result - Student Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .result-table th, .result-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .result-table th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        .gpa-card {
+            margin-top: 30px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--secondary-color), var(--sidebar-bg));
+            color: white;
+        }
+        .gpa-value {
+            font-size: 48px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Portal</h2>
+            <ul class="nav-links">
+                <li><a href="dashboard.html">🏠 Dashboard</a></li>
+                <li><a href="profile.html">👤 Profile</a></li>
+                <li><a href="attendance.html">📅 Attendance</a></li>
+                <li><a href="result.html">📊 Result</a></li>
+                <li><a href="notice.html">🔔 Notices</a></li>
+            </ul>
+            <a href="#" id="logoutBtn" style="color: var(--accent-color); text-decoration: none; padding: 10px;">🚪 Logout</a>
+        </aside>
+
+        <main class="main-content">
+            <header>
+                <h1>Examination Results</h1>
+                <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+            </header>
+
+            <section class="card">
+                <h3>Semester Grade Sheet</h3>
+                <table class="result-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Marks</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultBody">
+                        <tr>
+                            <td>Web Engineering</td>
+                            <td class="mark">88</td>
+                            <td class="grade">A</td>
+                        </tr>
+                        <tr>
+                            <td>Database Systems</td>
+                            <td class="mark">92</td>
+                            <td class="grade">A+</td>
+                        </tr>
+                        <tr>
+                            <td>Software Testing</td>
+                            <td class="mark">75</td>
+                            <td class="grade">B+</td>
+                        </tr>
+                        <tr>
+                            <td>Artificial Intelligence</td>
+                            <td class="mark">68</td>
+                            <td class="grade">B</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="card gpa-card">
+                <h3>Final SGPA</h3>
+                <div class="gpa-value" id="sgpa">0.00</div>
+                <p>Calculated based on average marks</p>
+            </section>
+        </main>
+    </div>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const marks = document.querySelectorAll('.mark');
+            let totalMarks = 0;
+            
+            marks.forEach(m => {
+                totalMarks += parseInt(m.textContent);
+            });
+            
+            const average = totalMarks / marks.length;
+            
+            // Simple GPA logic (Percentage / 25)
+            const gpa = (average / 25).toFixed(2);
+            document.getElementById('sgpa').textContent = gpa;
+        });
+    </script>
+</body>
+</html>
